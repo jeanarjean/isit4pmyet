@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>IsIt4PMYet</title>
+    <meta name="description" content="End your life">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <link rel="stylesheet" href="css/app.css"> -->
+    <style> 
+    #response {
+      color: red;
+      text-align: center;
+    }
+    #subresponse {
+      color: red;
+      text-align: center;
+    }
+    #video {
+      visibility: hidden;
+    }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <div id="response"></div>
+      <div id="subresponse"></div>
+      <iframe id="video" width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/123391210&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
+    </div>
+    <script type="text/javascript">
+      function myFunc(variable){
+        var response = document.getElementById("response");
+        var subresponse = document.getElementById("subresponse");
+        var video = document.getElementById("video");
+        var now = new Date();
+        var isityet = new Date().setHours(16);
+        if (now < isityet) {
+          response.innerHTML = "NO";
+          subresponse.innerHTML = "it is " + now;
+        } else {
+          response.innerHTML = "YES";
+          subresponse.innerHTML = "IT FUCKING IS";
+          video.style.visibility = "visible"
+        }
+      }
+      myFunc("something");
+    </script>
+  </body>
+</html>
