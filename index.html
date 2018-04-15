@@ -1,49 +1,91 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>IsIt4PMYet</title>
-    <meta name="description" content="End your life">
+    <meta name="description" content="Enjoy the time you have left.">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- <link rel="stylesheet" href="css/app.css"> -->
-    <style> 
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+    <style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Roboto Mono', monospace;
+    }
+
+    a {
+        color: #000000;
+        text-decoration: none
+    }
+
     #response {
-      color: red;
-      text-align: center;
+        color: red;
+        text-align: center;
     }
+
     #subresponse {
-      color: red;
-      text-align: center;
+        color: red;
+        text-align: center;
     }
+
     #video {
-      visibility: hidden;
+        visibility: hidden;
+    }
+
+    #app {
+        display: grid;
+        grid-template-areas: "content" "footer";
+        grid-template-rows: 1fr 25px;
+        min-height: 100vh;
+    }
+
+    #content {
+        grid-area: content;
+    }
+
+    #footer {
+        grid-area: footer;
+        background-color: lightgrey;
+        text-align: center;
+        font-family: 'Roboto Mono', monospace;
     }
     </style>
-  </head>
-  <body>
+</head>
+
+<body>
     <div id="app">
-      <div id="response"></div>
-      <div id="subresponse"></div>
-      <iframe id="video" width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/123391210&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
+        <div id="content">
+            <div id="response"></div>
+            <div id="subresponse"></div>
+            <iframe id="video" width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/123391210&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
+        </div>
+        <div id="footer">
+            <a href="http://rorscharg.com">
+            &copy; Rorscharg Software
+          </a>
+        </div>
     </div>
     <script type="text/javascript">
-      function myFunc(variable){
+    function myFunc(variable) {
         var response = document.getElementById("response");
         var subresponse = document.getElementById("subresponse");
         var video = document.getElementById("video");
         var now = new Date();
         var isityet = new Date().setHours(16);
         if (now < isityet) {
-          response.innerHTML = "NO";
-          subresponse.innerHTML = "it is " + now;
+            response.innerHTML = "NO";
+            subresponse.innerHTML = "it is " + now;
         } else {
-          response.innerHTML = "YES";
-          subresponse.innerHTML = "IT FUCKING IS";
-          video.style.visibility = "visible"
+            response.innerHTML = "YES";
+            subresponse.innerHTML = "IT FUCKING IS";
+            video.style.visibility = "visible"
         }
-      }
-      myFunc("something");
+    }
+    myFunc("something");
     </script>
-  </body>
+</body>
+
 </html>
